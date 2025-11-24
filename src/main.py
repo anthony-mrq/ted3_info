@@ -1,5 +1,6 @@
 from modules.loaders.housing import fetch_data
 from modules.lr.mlr import LR
+from modules.metrics.reg import rmse
 
 
 def main():
@@ -13,6 +14,7 @@ def main():
     print("Coefficients:", model.get_coefficients())
     y_pred = model.predict(data[0])
     print("Predicted values:", y_pred)
+    print("RMSE:", rmse(data[1], y_pred))
 
 
 if __name__ == "__main__":
